@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日语科学学习法 | 基于学术依据的完整路线图</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, "Microsoft YaHei", sans-serif; }
+        :root {
+            --red: #e63946; --orange: #ff9f1c; --yellow: #f4d35e;
+            --green: #2a9d8f; --blue: #1d3557; --light: #f1faee;
+            --gray: #e5e5e5; --dark: #333;
+        }
+        body { background: #f8f9fa; color: var(--dark); line-height: 1.7; padding-bottom: 60px; }
+        header {
+            background: linear-gradient(135deg, var(--blue), #457b9d);
+            color: white; padding: 2.5rem 1rem; text-align: center;
+        }
+        header h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        header p { opacity: 0.9; max-width: 600px; margin: 0 auto; }
+        .container { max-width: 900px; margin: 0 auto; padding: 1rem; }
+        .card {
+            background: white; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            padding: 1.5rem; margin-bottom: 1.5rem; transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-2px); }
+        .stage { border-left: 4px solid; padding-left: 1.2rem; margin: 1.2rem 0; }
+        .stage h2 { font-size: 1.3rem; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; }
+        .red { border-color: var(--red); }
+        .orange { border-color: var(--orange); }
+        .yellow { border-color: var(--yellow); }
+        .green { border-color: var(--green); }
+        .blue { border-color: var(--blue); }
+        .tag {
+            display: inline-block; padding: 0.2rem 0.6rem; border-radius: 20px;
+            font-size: 0.85rem; margin-right: 0.5rem; margin-bottom: 0.5rem;
+        }
+        .tag-red { background: #ffe3e3; color: #c0392b; }
+        .tag-orange { background: #ffeeda; color: #d35400; }
+        .tag-green { background: #e8f5e9; color: #27ae60; }
+        .tag-blue { background: #e3f2fd; color: #2980b9; }
+        .checklist { list-style: none; margin: 1rem 0; }
+        .checklist li { padding: 0.5rem 0; border-bottom: 1px solid #eee; }
+        .checklist li:last-child { border-bottom: none; }
+        .checklist input { margin-right: 0.7rem; transform: scale(1.1); }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+        th, td { padding: 0.7rem; text-align: left; border-bottom: 1px solid #eee; }
+        th { background: var(--light); }
+        .theory { background: #f0f4f8; border-radius: 8px; padding: 1rem; margin: 1rem 0; font-size: 0.9rem; }
+        .progress-bar {
+            height: 10px; background: #eee; border-radius: 5px; margin-top: 0.5rem; overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%; background: linear-gradient(90deg, var(--green), #2ecc71);
+            width: 0%; border-radius: 5px; transition: width 0.5s ease;
+        }
+        .tab-buttons { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+        .tab-btn {
+            padding: 0.6rem 1rem; border: none; border-radius: 8px; background: #eee;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .tab-btn.active { background: var(--blue); color: white; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        footer { text-align: center; padding: 1.5rem; color: #888; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🇯🇵 日语科学学习法</h1>
+    <p>基于二语习得理论 + 间隔重复 + 实证案例 · 完整五阶段路线图</p>
+</header>
+
+<div class="container">
+
+    <!-- 理论依据 -->
+    <div class="card">
+        <h2>📚 学术依据</h2>
+        <div class="theory">
+            <table>
+                <tr><th>理论/研究</th><th>核心应用</th></tr>
+                <tr><td><strong>Krashen 可理解性输入</strong></td><td>材料难度控制在 i+1，理解80–90%最佳</td></tr>
+                <tr><td><strong>Nation (2001)</strong></td><td>2000核心词覆盖日常95%场景，优先掌握</td></tr>
+                <tr><td><strong>Nakata (2017)</strong></td><td>间隔重复SRS比死记硬背效率提升30–50%</td></tr>
+                <tr><td><strong>Dunlosky (2013)</strong></td><td>主动回忆+自测是最高效学习策略之一</td></tr>
+                <tr><td><strong>JF标准</strong></td><td>以"能做什么"为导向，覆盖五大能力</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- 阶段切换 -->
+    <div class="card">
+        <div class="tab-buttons">
+            <button class="tab-btn active" data-stage="1">阶段一 · 假名</button>
+            <button class="tab-btn" data-stage="2">阶段二 · N5入门</button>
+            <button class="tab-btn" data-stage="3">阶段三 · N4→N3</button>
+            <button class="tab-btn" data-stage="4">阶段四 · N2熟练</button>
+            <button class="tab-btn" data-stage="5">阶段五 · N1精通</button>
+            <button class="tab-btn" data-stage="daily">每日计划</button>
+        </div>
+
+        <!-- 阶段一 -->
+        <div class="tab-content active" id="stage-1">
+            <div class="stage red">
+                <h2>🔴 阶段一：基础筑基 — 假名掌握</h2>
+                <span class="tag tag-red">预计：1–3周</span>
+                <span class="tag tag-green">目标：熟练读写46音</span>
+                
+                <h3>📌 学习任务</h3>
+                <ul class="checklist" id="list-1">
+                    <li><input type="checkbox"> 第1周：平假名全部掌握 → 脱离罗马音认读</li>
+                    <li><input type="checkbox"> 第2周：片假名全部掌握 → 与平假名对照记忆</li>
+                    <li><input type="checkbox"> 第3周：混合速测 → 短句认读，反应时间<2秒</li>
+                </ul>
+
+                <h3>💡 科学提示</h3>
+                <p>跳过直接学罗马音/汉字，后期会形成依赖，进度平均放缓40%。扎实掌握假名再进阶，效率更高！</p>
+                
+                <h3>📊 进度</h3>
+                <div class="progress-bar"><div class="progress-fill" id="prog-1"></div></div>
+            </div>
+        </div>
+
+        <!-- 阶段二 -->
+        <div class="tab-content" id="stage-2">
+            <div class="stage orange">
+                <h2>🟠 阶段二：入门构建 — N5基础</h2>
+                <span class="tag tag-orange">预计：4–12周</span>
+                <span class="tag tag-blue">目标：800–1000词 · 150汉字</span>
+                
+                <h3>📌 学习任务</h3>
+                <ul class="checklist" id="list-2">
+                    <li><input type="checkbox"> 语法：は/が、で/に、ます/です体系 → て/た/ない变形</li>
+                    <li><input type="checkbox"> 词汇：按场景分类 · Anki间隔重复复习</li>
+                    <li><input type="checkbox"> 汉字：随词汇同步记 · 优先高频汉字（日・月・人等）</li>
+                    <li><input type="checkbox"> 听力：每日5–10分钟NHK简易新闻/慢速素材</li>
+                </ul>
+
+                <h3>📖 推荐教材</h3>
+                <p>《大家的日语I》、《新完全掌握入门》、NHK Web Easy</p>
+                
+                <h3>📊 进度</h3>
+                <div class="progress-bar"><div class="progress-fill" id="prog-2"></div></div>
+            </div>
+        </div>
+
+        <!-- 阶段三 -->
+        <div class="tab-content" id="stage-3">
+            <div class="stage yellow">
+                <h2>🟡 阶段三：能力扩展 — N4→N3</h2>
+                <span class="tag tag-orange">预计：4–8个月</span>
+                <span class="tag tag-green">目标：2500–3500词 · 650汉字</span>
+                
+                <h3>📌 学习任务</h3>
+                <ul class="checklist" id="list-3">
+                    <li><input type="checkbox"> 语法：敬语基础、复合句型、条件句、使役/被动入门</li>
+                    <li><input type="checkbox"> 词汇：前2000核心词优先 → 覆盖日常95%场景</li>
+                    <li><input type="checkbox"> 输入：分级读物/动漫/日剧，难度控制在看懂80–90%</li>
+                    <li><input type="checkbox"> 输出：写短句日记、自言自语、语言交换练习</li>
+                </ul>
+
+                <h3>💡 关键依据</h3>
+                <p>仅靠"多听多看"进步速度仅为主动学习的60%；<strong>输入+输出结合</strong>效果最优</p>
+                
+                <h3>📊 进度</h3>
+                <div class="progress-bar"><div class="progress-fill" id="prog-3"></div></div>
+            </div>
+        </div>
+
+        <!-- 阶段四 -->
+        <div class="tab-content" id="stage-4">
+            <div class="stage green">
+                <h2>🟢 阶段四：熟练提升 — N2水平</h2>
+                <span class="tag tag-green">预计：6–12个月</span>
+                <span class="tag tag-blue">目标：6000–7000词 · 1000汉字</span>
+                
+                <h3>📌 学习任务</h3>
+                <ul class="checklist" id="list-4">
+                    <li><input type="checkbox"> 输入：新闻摘要、播客、原生小说/漫画、综艺</li>
+                    <li><input type="checkbox"> 语法：敬语系统梳理、书面语/口语差异、固定搭配</li>
+                    <li><input type="checkbox"> 输出：话题写作、辩论练习、定期与母语者交流</li>
+                    <li><input type="checkbox"> 词汇：主题群扩充、近义词对比、语境积累</li>
+                </ul>
+
+                <h3>🎯 能力标准（JF B2）</h3>
+                <p>流畅应对日常场景、独立撰写连贯文章、理解复杂内容大意</p>
+                
+                <h3>📊 进度</h3>
+                <div class="progress-bar"><div class="progress-fill" id="prog-4"></div></div>
+            </div>
+        </div>
+
+        <!-- 阶段五 -->
+        <div class="tab-content" id="stage-5">
+            <div class="stage blue">
+                <h2>🔵 阶段五：精通进阶 — N1/专业水平</h2>
+                <span class="tag tag-blue">预计：长期坚持</span>
+                <span class="tag tag-green">目标：10000+词 · 2000汉字</span>
+                
+                <h3>📌 学习任务</h3>
+                <ul class="checklist" id="list-5">
+                    <li><input type="checkbox"> 专业领域：学术/商务/兴趣方向专项词汇积累</li>
+                    <li><input type="checkbox"> 文化融入：习惯用语、礼仪文化、文体差异</li>
+                    <li><input type="checkbox"> 持续输出：长期写作+口语，形成稳定语感</li>
+                    <li><input type="checkbox"> 深度理解：文学作品、专业文献、社会议题讨论</li>
+                </ul>
+
+                <h3>⏱️ 参考</h3>
+                <p>中文母语者因汉字优势，约 <strong>1500–1800小时</strong> 可达专业水平（FSI估计英语母语者需2200小时）</p>
+                
+                <h3>📊 进度</h3>
+                <div class="progress-bar"><div class="progress-fill" id="prog-5"></div></div>
+            </div>
+        </div>
+
+        <!-- 每日计划 -->
+        <div class="tab-content" id="stage-daily">
+            <h2>📅 每日黄金学习流程</h2>
+            <table>
+                <tr><th>环节</th><th>占比</th><th>内容</th><th>科学依据</th></tr>
+                <tr>
+                    <td>📖 新知</td><td>20%</td>
+                    <td>新语法/词汇+例句理解</td><td>建立认知框架</td>
+                </tr>
+                <tr>
+                    <td>🔁 复习</td><td>30%</td>
+                    <td>SRS闪卡回顾+错题重练</td><td>对抗遗忘曲线 Nakata(2017)</td>
+                </tr>
+                <tr>
+                    <td>🎧 输入</td><td>35%</td>
+                    <td>听力+阅读可理解性输入</td><td>Krashen i+1 输入假说</td>
+                </tr>
+                <tr>
+                    <td>🗣️ 输出</td><td>15%</td>
+                    <td>写/说/主动回忆自测</td><td>主动回忆高效策略 Dunlosky(2013)</td>
+                </tr>
+            </table>
+            
+            <h3 style="margin-top: 1.5rem;">✅ 今日打卡</h3>
+            <ul class="checklist" id="daily-list">
+                <li><input type="checkbox"> 复习昨日词汇（间隔重复）——10分钟</li>
+                <li><input type="checkbox"> 学习新语法/句型——15分钟</li>
+                <li><input type="checkbox"> 听力输入（NHK简易/动漫片段）——15分钟</li>
+                <li><input type="checkbox"> 阅读短句/例句——10分钟</li>
+                <li><input type="checkbox"> 输出练习（自言自语/写短句）——5分钟</li>
+            </ul>
+            
+            <p style="margin-top: 1rem; color: #666; font-style: italic;">💡 关键原则：每日坚持 ＞ 单次长时间</p>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    日语科学学习法 · 基于学术研究与实证案例 · 数据自动保存在本地浏览器 💾
+</footer>
+
+<script>
+// 标签切换
+const tabs = document.querySelectorAll('.tab-btn');
+const contents = document.querySelectorAll('.tab-content');
+
+tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const stage = btn.dataset.stage;
+        tabs.forEach(b => b.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(`stage-${stage}`).classList.add('active');
+    });
+});
+
+// 进度计算 + 本地存储
+document.addEventListener('DOMContentLoaded', () => {
+    const lists = ['list-1','list-2','list-3','list-4','list-5','daily-list'];
+    
+    // 加载保存状态
+    lists.forEach(listId => {
+        const list = document.getElementById(listId);
+        if (!list) return;
+        const items = list.querySelectorAll('input[type="checkbox"]');
+        items.forEach((cb, idx) => {
+            const key = `check-${listId}-${idx}`;
+            const saved = localStorage.getItem(key);
+            if (saved === 'true') cb.checked = true;
+            
+            // 保存变化
+            cb.addEventListener('change', () => {
+                localStorage.setItem(key, cb.checked);
+                updateProgress();
+            });
+        });
+    });
+    
+    updateProgress();
+});
+
+// 更新进度条
+function updateProgress() {
+    for (let i = 1; i <= 5; i++) {
+        const list = document.getElementById(`list-${i}`);
+        const bar = document.getElementById(`prog-${i}`);
+        if (!list || !bar) continue;
+        const items = list.querySelectorAll('input[type="checkbox"]');
+        const checked = list.querySelectorAll('input:checked').length;
+        const percent = items.length > 0 ? (checked / items.length) * 100 : 0;
+        bar.style.width = percent + '%';
+    }
+}
+</script>
+
+</body>
+</html>
